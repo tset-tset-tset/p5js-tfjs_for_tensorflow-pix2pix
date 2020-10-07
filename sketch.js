@@ -33,6 +33,7 @@ function pix2pixTransfer(){
     if (!readyTransfer) {
         return;
     }
+    readyTransfer = false;
     resultTensor = tf.tidy(() => {
         // tf.browser.fromPixels() returns a Tensor from an canvas element.
         let inputTensor = tf.browser.fromPixels(select('canvas').elt).toFloat();
